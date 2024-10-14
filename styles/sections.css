@@ -3,5 +3,30 @@
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
+    }
+  .card {
+    border-radius: 4px;
+    overflow: hidden; /*fazer com que a parte sem border radius suma*/
+    position: relative; /*relative na imagem pra outra imagem ficar absolute só dentro desse card */
+    &::before {
+      content: ""; /*tem que ter o conteúdo*/
+      position: absolute; /*pra posicionar por cima*/
+      inset: 0; /*não lembro pra que serve */
+      top: 50%; /*dizendo onde começa*/
+      background: linear-gradient( /*criando o degrade*/
+        180deg, 
+        transparent 0%,
+        #020617 100%
+      );
+    }
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      padding: 24px;
+
+      h2 {
+        margin-top: 8px;
+      }
+    }
   }
 }
